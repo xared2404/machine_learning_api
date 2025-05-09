@@ -134,7 +134,7 @@ POST /predict/logistic
 
 Docker es una plataforma para desarrollar, empaquetar y ejecutar aplicaciones dentro de contenedores. Un contenedor es un entorno ligero, portátil y aislado que incluye todo lo necesario para ejecutar una aplicación: código, dependencias, sistema de archivos, etc.
 
-Para ejecutar el proyecto en Docker debemos crear dos archivos, ```Dockerfile``` y ```docker-compues.yml```. 
+Para ejecutar el proyecto en Docker debemos crear dos archivos, ```Dockerfile``` y ```docker-compose.yml```. 
 
 ```Dockerfile ```
 
