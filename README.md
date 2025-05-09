@@ -128,4 +128,52 @@ POST /predict/logistic
   "petal_length": 1.4,
   "petal_width": 0.2
 }
+```
+
+## 🐳 **Docker**
+
+Docker es una plataforma para desarrollar, empaquetar y ejecutar aplicaciones dentro de contenedores. Un contenedor es un entorno ligero, portátil y aislado que incluye todo lo necesario para ejecutar una aplicación: código, dependencias, sistema de archivos, etc.
+
+Para ejecutar el proyecto en Docker debemos crear dos archivos, ```Dockerfile``` y ```docker-compues.yml```. 
+
+```Dockerfile ```
+
+```bash
+FROM python:3.10
+
+WORKDIR /app
+
+# Copiar archivos
+COPY app.py .
+COPY models/ ./models/
+
+# Instalar dependencias
+RUN pip install flask joblib scikit-learn
+
+EXPOSE 5001
+
+# Comando de inicio
+CMD ["python", "app.py"]
+
+```
+
+```docker-compose```
+
+```bash
+version: "3.8"
+
+services:
+  iris-api:
+    build: .
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./models:/app/models
+ ```
+
+En la estructura del proyecto ya se encuentran, para correr los contenedores ejecutar desde lla carpeta del proyecto, esto ejecutara los contenedores: 
+
+```bash
+docker-compose up --build
+```
 
