@@ -27,7 +27,7 @@ Los parámetros de entrada necesarios para realizar una predicción pueden envia
 - `petal_length`  
 - `petal_width`
 
-# 📁 Estructura de carpetas
+## 📁 Estructura de carpetas
 
 
 ```
@@ -52,3 +52,40 @@ Los parámetros de entrada necesarios para realizar una predicción pueden envia
 - Pandas, NumPy  
 - Modelos guardados en formato `.h5` o `.pkl`  
 - Docker (opcional)
+
+
+## 🏗️ Instalación
+
+Sigue estos pasos para configurar el entorno de desarrollo local con Anaconda y Python:
+
+1. **Crear un entorno virtual con Anaconda**:
+
+```bash
+conda create -n iris_env python=3.9
+conda activate iris_env
+```
+2. **Navegar en la carpeta del proyecto**: 
+
+```bash
+  cd machine__learning_api
+```
+
+3. **Instala las dependencias necesarias**:
+
+```bash
+pip install -r requirements.txt
+```
+
+## 🤖 Modelos de Machine Learning
+
+Para generar y entrenar los modelos de clasificación, ejecuta el siguiente script:
+
+```bash
+python iris_models.py
+```
+La respuesta es la evaluacion del modelo. Por ultimo resta levantar el servidor ejecutando:
+
+```
+python app.py
+```
+
