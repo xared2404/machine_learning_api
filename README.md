@@ -55,15 +55,25 @@ Los parámetros de entrada necesarios para realizar una predicción pueden envia
 
 
 ## 🏗️ Instalación
+ 
+Clona este repositorio:
+
+```bash
+git clone https://github.com/tu_usuario/iris-api.git
+cd iris-api
+```
 
 Sigue estos pasos para configurar el entorno de desarrollo local con Anaconda y Python:
 
-1. **Crear un entorno virtual con Anaconda**:
+
+1. ⚙️ **Crear y activar un entorno virtual con Anaconda**:
 
 ```bash
-conda create -n iris_env python=3.9
-conda activate iris_env
+python -m venv venv
+source venv/bin/activate  
 ```
+En Windows: ```venv\Scripts\activate```
+
 2. **Navegar en la carpeta del proyecto**: 
 
 ```bash
@@ -83,9 +93,39 @@ Para generar y entrenar los modelos de clasificación, ejecuta el siguiente scri
 ```bash
 python iris_models.py
 ```
-La respuesta es la evaluacion del modelo. Por ultimo resta levantar el servidor ejecutando:
+La respuesta es la evaluacion del modelo. 
 
-```
+Por ultimo resta levantar el servidor ejecutando:
+
+## 🚀 Iniciar el servidor Flask:
+
+```bash
 python app.py
 ```
+
+La API estará disponible en:
+
+```http://127.0.0.1:5000/```
+
+## 📈 Endpoints disponibles
+
+Cada endpoint corresponde a un modelo de clasificación diferente:
+
+| Método | Endpoint                   | Descripción                                    |
+|--------|----------------------------|------------------------------------------------|
+| POST   | `/predict/logistic`        | Predicción con Regresión Logística             |
+| POST   | `/predict/decision_tree`   | Predicción con Árbol de Decisión               |
+| POST   | `/predict/svm`             | Predicción con Máquina de Vectores de Soporte  |
+| POST   | `/predict/random_forest`   | Predicción con Bosque Aleatorio                |
+
+## 🧪 Ejemplo de solicitud
+
+```json
+POST /predict/logistic
+{
+  "sepal_length": 5.1,
+  "sepal_width": 3.5,
+  "petal_length": 1.4,
+  "petal_width": 0.2
+}
 
