@@ -95,7 +95,6 @@ python iris_models.py
 ```
 La respuesta es la evaluacion del modelo. 
 
-Por ultimo resta levantar el servidor ejecutando:
 
 ## 🚀 Iniciar el servidor Flask:
 
